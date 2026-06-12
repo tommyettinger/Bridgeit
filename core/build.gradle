@@ -1,0 +1,31 @@
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+dependencies {
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api "com.github.tommyettinger:cringe:$cringeVersion"
+  api "com.github.tommyettinger:crux:$cruxVersion"
+  api "com.github.tommyettinger:digital:$digitalVersion"
+  api "com.github.tommyettinger:funderby:$funderbyVersion"
+  api "com.github.tommyettinger:gand:$gandVersion"
+  api "com.github.tommyettinger:gdcrux:$gdcruxVersion"
+  api "com.github.tommyettinger:jdkgdxds:$jdkgdxdsVersion"
+  api "com.github.tommyettinger:juniper:$juniperVersion"
+  api "com.github.tommyettinger:regexodus:$regExodusVersion"
+  api "com.squidpony:squidcore:$squidSquadVersion"
+  api "com.squidpony:squidgrid:$squidSquadVersion"
+  api "com.squidpony:squidpath:$squidSquadVersion"
+  api "com.squidpony:squidplace:$squidSquadVersion"
+  api "com.squidpony:squidpress:$squidSquadVersion"
+  api "com.squidpony:squidseek:$squidSquadVersion"
+  api "com.squidpony:squidsmooth:$squidSquadVersion"
+  api "net.onedaybeard.artemis:artemis-odb:$artemisOdbVersion"
+
+  if(enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+}
+
+jar {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
